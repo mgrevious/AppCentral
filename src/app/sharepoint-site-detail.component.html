@@ -1,0 +1,76 @@
+﻿
+<div class="iNetAppDetail" *ngIf="spSite">
+    <div class="panelbar-wrapper">
+        <kendo-panelbar>
+            <kendo-panelbar-item [title]="spSite.Name" expanded="true" class="main">
+                <template kendoPanelBarContent>
+                    <ul class="primaryDetail">
+                        <li>
+                            <span class="bold">Description:</span> {{ spSite.Description }}
+                        </li>
+                        <li>
+                            <span class="bold">Environment:</span> {{ spSite.SharePointEnvironment == null ? "" : spSite.SharePointEnvironment.EnvironmentName }}
+                        </li>
+                        <li>
+                            <span class="bold">Production Link:</span> <a href="{{ spSite.ProductionURL }}" target="_blank">{{ spSite.ProductionURL }}</a> 
+                        </li>
+                        <li>
+                            <span class="bold">Test Link:</span> <a href="{{ spSite.TestURL }}" target="_blank">{{ spSite.TestURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Integration Link:</span> <a href="{{ spSite.IntegrationURL }}" target="_blank">{{ spSite.IntegrationURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Contains PHI:</span> <input disabled="disabled" type="checkbox" checked="{{ spSite.ContainsPHI }}" />
+                        </li>
+                        <li>
+                            <span class="bold">Is Stub Site:</span> <input disabled="disabled" type="checkbox" checked="{{ spSite.IsStubSite }}" />
+                        </li>
+                        <li>
+                            <span class="bold">Code Location:</span> {{ spSite.CodeLocation }}
+                        </li>
+                        <li>
+                            <span class="bold">Date Created:</span> {{ spSite.CreatedDate | date: 'MMMM dd, yyyy' }}
+                        </li>
+                        <li>
+                            <span class="bold">Notes:</span> {{ spSite.Notes }}
+                        </li>
+                        <li>
+                            <span class="bold">Migration Status:</span> {{ spSite.MigrationSiteId === undefined ? "N/A" : ( spSite.MigrationSiteId === null ?  "" : "Migrated to " + spSite.MigrationSiteName + " because " + spSite.MigrationReason + " by " + spSite.MigratedByName + " on " + spSite.MigratedDate )  }}
+                        </li>
+                    </ul>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Owners">
+                <!-- [expanded]="true"> -->
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="spSite.Owners">
+                        <!--  [height]="150" -->
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Developers">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="spSite.Developers">
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Documents">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="spSite.Documents">
+                        <kendo-grid-column field="DocumentType.Name" title="Type"></kendo-grid-column>
+                        <kendo-grid-column field="Name" title="Name"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+        </kendo-panelbar>
+    </div>
+</div>

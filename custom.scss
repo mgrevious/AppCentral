@@ -1,0 +1,97 @@
+$uhDefaultColor: #bd3839;
+$lightGrey: #f1f1f1;
+$darkText: #333;
+$a-tags-hover: 'a:active, a:hover';
+
+p, li, a {
+    color: $darkText;
+    font-size: 12px;
+}
+
+#appCentral {
+    margin-bottom: 40px;
+}
+
+.siteName {
+    color: $uhDefaultColor;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Site Nav */
+#siteNav.nav-pills {
+    li.active {
+        a {
+            background-color: $uhDefaultColor;
+            color: #fff;
+        }
+    }
+    li {
+        a {
+            color: $darkText;
+        }
+    }
+}
+
+/* App Central List */
+.list-group {
+    .list-group-item{
+        a {
+            color: $darkText;
+        }
+        #{$a-tags-hover}{
+            text-decoration:none;
+            color: $uhDefaultColor;
+        }
+        a:focus {
+            text-decoration: none;
+        }
+    }
+    .selected {
+        background-color: $lightGrey;
+    }
+}
+
+/* App Central Detail */
+.iNetAppDetail {
+    ul.primaryDetail {
+        list-style: none;
+        padding:15px 15px 0 15px;
+
+        li {
+            padding-bottom: 1em;
+        }
+
+        span.bold {
+            font-weight: bold;
+        }
+    }
+
+    /*.k-panelbar .k-item {
+        .k-link {
+            color: $darkText;
+            transition: background-color 0.2s ease; 
+        }
+        .k-link.k-state-selected {
+            background-color: #ddd;
+            color: $darkText; 
+        }
+        .k-link.k-state-selected > .k-icon {
+            color: $darkText; 
+        }
+        .k-link.k-state-selected.k-state-focused {
+            box-shadow: inset 0 0 0 2px #ddd; 
+        }
+        .k-link.k-state-selected.k-state-focused:hover {
+            box-shadow: inset 0 0 0 2px #bababa; 
+        }
+        .k-link.k-state-selected:hover {
+            color: $darkText;
+            background-color: #ccc; 
+        }
+        .k-link.k-state-focused {
+            box-shadow: inset 0 0 0 2px #e2e2e2; 
+        }
+    }*/
+}
+.subSiteName { margin-top: 0px; }

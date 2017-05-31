@@ -1,0 +1,370 @@
+﻿.k-button:hover:active, k-state-active.k-button:hover {
+    border-color:#c70909;
+    background-color: #c70909;
+}
+
+.km-button {
+border:0;
+}
+.km-button.km-state-active {
+    background-color: #FCBABA;
+}
+.RadMenu_mainmenu,
+.RadMenu_mainmenu .rmLink:hover
+{
+	z-index: 10001 !important;
+}
+.subTitle {
+    color: #bd3839;
+    font-size: large;
+}
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.k-window .k-window-titlebar {
+    background-color: #c70909;
+}
+.k-window .k-window-titlebar {
+    background-image: none;
+}
+.k-window .k-window-title {
+    color: White;
+}
+span.k-tooltip {
+    margin-left: 20px;
+}
+.roundCornerBorder 
+{
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.machineInstances input {
+    visibility: hidden;
+}
+
+.k-grid tbody tr {
+    height: 50px;
+}
+#mainDiv {
+    text-align: left;
+}
+
+.demo-section {
+    display: inline-block;
+    vertical-align: top;
+    /*width: 320px;*/
+    text-align: left;
+    margin: 0 2em;
+}
+
+#vertical {
+    height: 700px;
+    /*width: 200px;*/
+    margin: 0 auto;
+}
+
+#middle-pane {
+    background-color: rgba(60, 70, 80, 0.10);
+}
+
+#bottom-pane {
+    background-color: rgba(60, 70, 80, 0.15);
+}
+
+#pagecontent table
+{
+    margin: 0px !important;
+    padding: 0px;
+}
+
+#content-cell
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#content-container
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+#dvHeaders
+{
+    margin-top: 6px;
+    overflow: auto;
+}
+
+#dvTitle
+{
+    padding: 0.2em;
+    overflow: auto;
+}
+
+#lblTreeViewHeader
+{
+}
+
+#dvAllFilters {
+    float: left;
+    width: auto;
+    overflow: auto;
+    margin-top: 3px;
+}
+
+#dvEditPanel
+{
+    /* if you want the Add/Edit/Migrate buttons to be a step below the filters: */
+    /* clear: both; */
+    /* else if you want the Add/Edit/Migrate buttons on the same line as the filters: */
+    margin-top: 3px;
+    /* end */
+    float: right;
+    width: auto;
+    overflow: auto;
+}
+
+.dvActionButton {
+    float: right;
+    margin-left: 5px;
+}
+
+.filterSpacedDisplay {
+    margin-left: 1em;
+}
+
+.filterLabelColumn {
+    width: 15em;
+    display: inline-block;
+}
+
+#left-pane, #right-pane {
+    background-color: rgba(60, 70, 80, 0.05);
+}
+
+.pane-content {
+    padding: 0 10px;
+}
+
+.configuration .k-textbox {
+    width: 50px;
+}
+
+.sectionLabel {
+    font-weight: bold;
+}
+
+.k-state-selected {
+    background-color: #c70909;
+    color: #fff;
+    border-color: #c70909;
+}
+
+.k-edit-form-container {
+    width: 800px;
+}
+
+.k-textbox {
+    width: 600px
+}
+
+.k-edit-label
+{
+    width: 170px;
+    margin-right: 3px;
+}
+
+.small-dialog-edit-label
+{
+    width: 120px !important;
+}
+
+.k-big-edit-label
+{
+    width: 150px;
+}
+
+.k-autocomplete.k-header {
+    width: 240px;
+}
+
+
+.k-edit-field
+{
+    float: left;
+}
+
+
+.formButtonGroup
+{
+    clear: both;
+    text-align: right;
+    width: 820px;
+}
+
+.docFormButtonGroup
+{
+    clear: both;
+    text-align: right;
+    /* width: 738px; */
+    padding-bottom: 20px;
+}
+
+input[type="text"]:disabled {
+    /* doesn't work on IE7 and IE8 */
+    background-color: lightgray;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 12px;
+}
+
+applicationSiteViewModelBound {
+    /* Doesn't do anything in CSS but is a convenient anchor for setting bindings. */
+}
+
+applicationsListViewModelBound{
+    /* Doesn't do anything in CSS but is a convenient anchor for setting bindings. */
+}
+
+migrationViewModelBound{
+    /* Doesn't do anything in CSS but is a convenient anchor for setting bindings. */
+}
+
+migrationViewBound{
+    /* Doesn't do anything in CSS but is a convenient anchor for setting bindings. */
+}
+
+/* From the migrationEntryWindow */
+div#migrationEntryWindow {
+    width: 920px;
+}
+
+#pickMigratedSiteId-list {
+    width: auto;
+}
+
+#pickMigratedSiteId {
+    height: 240pt;
+    /*overflow: scroll;*/
+    position: relative;
+}
+
+#txtMigrationInfo {
+    font-weight: bold;
+    font-size: larger;
+    color: red;
+}
+
+.filterLabelColumn {
+    width: auto;
+}
+
+.filterInput {
+    width: auto;
+}
+
+.migrationFilterInput {
+    width: auto;
+    display: block;
+}
+
+#txtEditMigrationReason {
+    width: 100%;
+}
+
+.errorHtml {
+    background-color: red;
+}
+
+.k-invalid-msg {
+    background-color: pink;
+}
+
+.migrationLayout {
+    float: left;
+}
+
+.migrationError {
+    clear: both;
+}
+
+/*
+    
+    for side-by-side filters and main table
+
+.migrationFilterLabelColumn {
+    width: auto;
+    margin-top: 6px;
+    display: block;
+}
+
+#migrationFilters {
+    width: 180px;
+    float: left;
+}
+
+*/
+
+/* for when you want the filters splayed across the top instead */
+.migrationFilterLabelColumn {
+    display: inline-block;
+}
+
+#migrationFilters {
+    display: block;
+}
+
+.migrationFilterItem {
+    display: inline-block;
+}
+
+/* end */
+
+#migrationSelection {
+    width: 640px;
+    float: left;
+}
+
+#migrationButtons {
+    /* not actually used */
+    width: 10%;
+    height: 100%;
+    float: left;
+}
+
+#migrationButtonsInner {
+    width: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 6px;
+}
+
+#migrationError {
+    width: auto;
+}
+
+/* Get rid of the little X-clear-me box on inputs */
+input::-ms-clear, 
+    .k-textbox::-ms-clear ,
+    .k-input::-ms-clear 
+    {
+        width : 0;
+        height: 0;
+    }

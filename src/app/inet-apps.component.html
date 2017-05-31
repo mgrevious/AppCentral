@@ -1,0 +1,44 @@
+﻿
+<h2 class="subSiteName">I-Net Applications</h2> 
+<div class="row" style="margin-bottom:5px;">
+    <!--<form class="form-inline" role="form">-->
+        <div class="col-md-2">
+            <label for="inputName">Name:</label>
+            <input type="text" class="form-control" [(ngModel)]="searchiNetModel.Name" name="inputName" id="inputName" placeholder="Name">
+        </div>
+        <div class="col-md-2">
+            <label for="inputDescription">Description:</label>
+            <input type="text" class="form-control" [(ngModel)]="searchiNetModel.Description" name="inputDescription" id="inputDescription" placeholder="Description">
+        </div>
+        <div class="col-md-2">
+            <label for="inputNotes">Notes:</label>
+            <input type="text" class="form-control" [(ngModel)]="searchiNetModel.Notes" name="inputNotes" id="inputNotes" placeholder="Notes">
+        </div>
+    <div class="col-md-2">
+        <label></label>
+        <button style="margin-top:24px;height:34px;" kendoButton (click)="performSearch()" type="submit" class="btn btn-primary">Search</button>
+        <button style="margin-top:24px;height:34px;" kendoButton (click)="clearSearch()" type="submit" class="btn btn-primary">Reset</button>
+    </div>
+        <!--</form>-->
+    </div>
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="list-group inet-apps-menu" style="overflow-y: scroll; height: 78vh; border-top-color: darkslategrey; border-bottom-color: darkslategrey;">
+                    <li class="list-group-item" *ngFor="let iNetApp of clientiNetApplications" (click)="onSelect(iNetApp)"
+                        [class.selected]="iNetApp === selectediNetApplication">
+
+                        <a>{{iNetApp.Name}}</a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <!--<div *ngIf="loading == true" class="loader">
+                    Loading...-->
+                <uh-inet-app-detail [appDetail]="selectediNetApplication"></uh-inet-app-detail>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>

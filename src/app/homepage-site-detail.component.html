@@ -1,0 +1,48 @@
+﻿
+<div class="iNetAppDetail" *ngIf="homepageSite">
+    <div class="panelbar-wrapper">
+        <kendo-panelbar>
+            <kendo-panelbar-item [title]="homepageSite.Name" expanded="true" class="main">
+                <template kendoPanelBarContent>
+                    <ul class="primaryDetail">
+                        <li>
+                            <span class="bold">Name:</span> {{ homepageSite.Name }}
+                        </li>
+                        <li>
+                            <span class="bold">Link:</span> <a href="{{ homepageSite.URL }}" target="_blank">{{ homepageSite.URL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Path:</span> <a href="{{ homepageSite.Path }}" target="_blank">{{ homepageSite.Path }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Date Created:</span>&nbsp; {{ homepageSite.CreatedDate | date: 'MMMM dd, yyyy' }}
+                        </li>
+                        <!--<li>
+                            <span class="bold">Has Children:</span>&nbsp; {{ homepageSite.HasChildren }}
+                        </li>-->
+                    </ul>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Owners">
+                <!-- [expanded]="true"> -->
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="homepageSite.Owners">
+                        <!--  [height]="150" -->
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Documents">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="homepageSite.Documents">
+                        <kendo-grid-column field="DocumentType.Name" title="Type"></kendo-grid-column>
+                        <kendo-grid-column field="Name" title="Name"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+        </kendo-panelbar>
+    </div>
+</div>

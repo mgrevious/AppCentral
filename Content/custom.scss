@@ -1,0 +1,74 @@
+$uhDefaultColor: #bd3839;
+$lightGrey: #f1f1f1;
+$darkText: #333;
+$a-tags-hover: 'a:active, a:hover';
+
+p, li, a {
+    color: $darkText;
+    font-size: 12px;
+}
+
+#appCentral {
+    margin-bottom: 40px;
+}
+
+.siteName {
+    color: $uhDefaultColor;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Site Nav */
+#siteNav.nav-pills {
+    li.active {
+        a {
+            background-color: $uhDefaultColor;
+            color: #fff;
+        }
+    }
+    li {
+        a {
+            color: $darkText;
+        }
+    }
+}
+
+/* App Central List */
+.list-group {
+    .list-group-item{
+        a {
+            color: $darkText;
+        }
+        #{$a-tags-hover}{
+            text-decoration:none;
+            color: $uhDefaultColor;
+        }
+        a:focus {
+            text-decoration: none;
+        }
+    }
+    .selected {
+        background-color: $lightGrey;
+    }
+}
+
+/* App Central Detail */
+.iNetAppDetail {
+    ul.primaryDetail {
+        list-style: none;
+        padding:15px 15px 0 15px;
+
+        li {
+            padding-bottom: 1em;
+        }
+
+        span.bold {
+            font-weight: bold;
+        }
+    }
+}
+
+ol.tree.k-treeview li a:hover {
+    text-decoration: none;
+    font-weight: bold;
+}

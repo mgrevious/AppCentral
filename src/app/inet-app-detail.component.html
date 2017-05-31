@@ -1,0 +1,96 @@
+﻿<div class="iNetAppDetail" *ngIf="appDetail">
+        <div class="panelbar-wrapper">
+        <kendo-panelbar>
+            <kendo-panelbar-item [title]="appDetail.Name" expanded="true" class="main">
+                <textarea id="yourId" [tinyEditor] [selector]="'yourId'" [(ngModel)]="appDetail.Description" (ngModelChange)="doNothing()">{{ appDetail.Description }}</textarea>
+                <textarea id="yourId1" [tinyEditor] [selector]="'yourId1'" [(ngModel)]="appDetail.Notes" (ngModelChange)="doNothing1()">{{ appDetail.Notes }}</textarea>
+                <template kendoPanelBarContent>
+                    <ul class="primaryDetail">
+                        <li>
+                            <span class="bold">Description:</span>
+                            <textarea id="yourId" [tinyEditor] [selector]="'yourId'" [(ngModel)]="appDetail.Description" (ngModelChange)="doNothing()">{{ appDetail.Description }}</textarea>
+                        </li>
+                        <li>
+                            <span class="bold">Application Type:</span> {{ appDetail.ApplicationType }}
+                        </li>
+                        <li>
+                            <span class="bold">Production Link:</span> <a href="{{ appDetail.ProductionURL }}" target="_blank">{{ appDetail.ProductionURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Staging Link:</span> <a href="{{ appDetail.StagingURL }}" target="_blank">{{ appDetail.StagingURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Training Link:</span> <a href="{{ appDetail.TrainingURL }}" target="_blank">{{ appDetail.TrainingURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Test Link:</span> <a href="{{ appDetail.TestURL }}" target="_blank">{{ appDetail.TestURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Integration Link:</span> <a href="{{ appDetail.IntegrationURL }}" target="_blank">{{ appDetail.IntegrationURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Contains PHI:</span> <input disabled="disabled" type="checkbox" checked="{{ appDetail.ContainsPHI }}" />
+                        </li>
+                        <li>
+                            <span class="bold">Code Location:</span> {{ appDetail.CodeLocation }}
+                        </li>
+                        <li>
+                            <span class="bold">Date Created:</span> {{ appDetail.CreatedDate | date: 'MMMM dd, yyyy' }}
+                        </li>
+                        <li>
+                            <span class="bold">BuildMaster Application Name:</span> {{ appDetail.BuildMasterApplicationName }}
+                        </li>
+                        <li>
+                            <span class="bold">Notes:</span>
+                            <textarea id="yourId1" [tinyEditor] [selector]="'yourId1'" [(ngModel)]="appDetail.Notes" (ngModelChange)="doNothing1()">{{ appDetail.Notes }}</textarea>
+                        </li>
+                    </ul>
+                </template>
+             
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Owners">
+                <!-- [expanded]="true"> -->
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="appDetail.Owners">
+                        <!--  [height]="150" -->
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Developers">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="appDetail.Developers">
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Documents">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="appDetail.Documents">
+                        <kendo-grid-column field="DocumentType.Name" title="Type"></kendo-grid-column>
+                        <kendo-grid-column field="Name" title="Name"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="BuildMaster">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="buildMasterGridData">
+                        <kendo-grid-column field="Application" title="Application"></kendo-grid-column>
+                        <kendo-grid-column field="Environment" title="Environment"></kendo-grid-column>
+                        <kendo-grid-column field="Release" title="Release"></kendo-grid-column>
+                        <kendo-grid-column field="Build" title="Build"></kendo-grid-column>
+                        <kendo-grid-column field="Execute" title="Execute"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+
+
+        </kendo-panelbar>
+    </div>
+</div>

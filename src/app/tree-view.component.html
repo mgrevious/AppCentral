@@ -1,0 +1,11 @@
+﻿<ol class="tree k-treeview" style="padding-left: 1em">
+    <li *ngFor="let node of treeNodes" class="tree__branch">
+
+        <a style="cursor: pointer" (click)="onSelect(node)">
+            <span *ngIf="node.hasChildNodes" class="k-icon {{ !!node.toggle ? 'k-minus' : 'k-plus' }}" role="presentation"></span>
+            {{ node.name }}
+        </a>
+        <tree-view *ngIf="node.toggle" [startingNodeId]="node.id" [setTreeNodes]="setTreeNodes"></tree-view>
+    </li>
+</ol>
+

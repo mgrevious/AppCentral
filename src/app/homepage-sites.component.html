@@ -1,0 +1,10 @@
+﻿<h2 class="subSiteName">Homepage Sites</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <tree-view [setTreeNodes]="getHomePageChildSites"></tree-view>
+    </div>
+    <div class="col-md-9">
+        <uh-homepage-site-detail [homepageSite]="selectedHomepageSite"></uh-homepage-site-detail>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+﻿
+<div class="iNetAppDetail" *ngIf="cmsSite">
+    <div class="panelbar-wrapper">
+        <kendo-panelbar>
+            <kendo-panelbar-item [title]="cmsSite.Name" expanded="true" class="main">
+                <template kendoPanelBarContent>
+                    <ul class="primaryDetail">  
+                        <li>
+                            <span class="bold">Description:</span> {{ cmsSite.Description }}
+                        </li>
+                        <li>
+                            <span class="bold">Production Link:</span> <a href="{{ cmsSite.ProductionURL }}" target="_blank">{{ cmsSite.ProductionURL }}</a> 
+                        </li>
+                        <li>
+                            <span class="bold">Staging Link:</span> <a href="{{ cmsSite.StagingURL }}" target="_blank">{{ cmsSite.StagingURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Training Link:</span> <a href="{{ cmsSite.TrainingURL }}" target="_blank">{{ cmsSite.TrainingURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Test Link:</span> <a href="{{ cmsSite.TestURL }}" target="_blank">{{ cmsSite.TestURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Integration Link:</span> <a href="{{ cmsSite.IntegrationURL }}" target="_blank">{{ cmsSite.IntegrationURL }}</a>
+                        </li>
+                        <li>
+                            <span class="bold">Contains PHI:</span> <input disabled="disabled" type="checkbox" checked="{{ cmsSite.ContainsPHI }}" />
+                        </li>
+                        <li>
+                            <span class="bold">Is Stub Site:</span> <input disabled="disabled" type="checkbox" checked="{{ cmsSite.IsStubSite }}" />
+                        </li>
+                        <li>
+                            <span class="bold">Date Created:</span> {{ cmsSite.CreatedDate | date: 'MMMM dd, yyyy' }}
+                        </li>
+                        <li>
+                            <span class="bold">Notes:</span> {{ cmsSite.Notes }}
+                        </li>
+                    </ul>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Owners">
+                <!-- [expanded]="true"> -->
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="cmsSite.Owners">
+                        <!--  [height]="150" -->
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Developers">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="cmsSite.Developers">
+                        <kendo-grid-column field="FullName" title="Name"></kendo-grid-column>
+                        <kendo-grid-column field="Department" title="Department"></kendo-grid-column>
+                        <kendo-grid-column field="Phone" title="Phone"></kendo-grid-column>
+                        <kendo-grid-column field="Email" title="Email"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+            <kendo-panelbar-item title="Documents">
+                <template kendoPanelBarContent>
+                    <kendo-grid [data]="cmsSite.Documents">
+                        <kendo-grid-column field="DocumentType.Name" title="Type"></kendo-grid-column>
+                        <kendo-grid-column field="Name" title="Name"></kendo-grid-column>
+                    </kendo-grid>
+                </template>
+            </kendo-panelbar-item>
+        </kendo-panelbar>
+    </div>
+</div>

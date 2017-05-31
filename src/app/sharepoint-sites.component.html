@@ -1,0 +1,21 @@
+﻿
+<h2 class="subSiteName">SharePoint Sites</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group inet-apps-menu" style="overflow-y: scroll; height: 78vh; border-top-color: darkslategrey; border-bottom-color: darkslategrey;">
+            <li class="list-group-item" *ngFor="let spSite of sharePointSites" (click)="onSelect(spSite)"
+                [class.selected]="spSite === selectedSharePointSite">
+
+                <a>{{spSite.Name}}</a>
+
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <!--<div *ngIf="loading == true" class="loader">
+            Loading...-->
+        <uh-sharepoint-site-detail [spSite]="selectedSharePointSite"></uh-sharepoint-site-detail>
+        <!--</div>-->
+    </div>
+</div>
